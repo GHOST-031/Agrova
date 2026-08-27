@@ -224,10 +224,10 @@ const SignupPage = () => {
             <div className="relative">
               <input
                 id="phone"
-                name="phone"
+                name="phoneNumber"
                 type="tel"
                 required
-                value={formData.phone}
+                value={formData.phoneNumber}
                 onChange={handleChange}
                 className="input-forest pl-10"
                 placeholder={t("enterYourPhoneNumber")}
