@@ -123,8 +123,9 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || "Registration failed");
-      }
+  const detailedMessage = data.errors?.[0]?.msg || data.message || "Registration failed";
+  throw new Error(detailedMessage);
+}
 
       // Store token and user data
       localStorage.setItem("f2c_token", data.token);
